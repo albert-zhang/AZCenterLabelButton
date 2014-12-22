@@ -1,0 +1,11 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'AZCenterLabelButton', :exclusive => true do
+  pod "AZCenterLabelButton", :path => "../"
+end
+
+target 'Tests', :exclusive => true do
+  pod "AZCenterLabelButton", :path => "../"
+
+  pod 'FBSnapshotTestCase'
+end
