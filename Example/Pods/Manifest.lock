@@ -1,0 +1,17 @@
+PODS:
+  - AZCenterLabelButton (0.1.0)
+  - FBSnapshotTestCase (1.4)
+
+DEPENDENCIES:
+  - AZCenterLabelButton (from `../`)
+  - FBSnapshotTestCase
+
+EXTERNAL SOURCES:
+  AZCenterLabelButton:
+    :path: ../
+
+SPEC CHECKSUMS:
+  AZCenterLabelButton: 79dda87a9c08c78c55c1a52d5efaf24d73a4087a
+  FBSnapshotTestCase: f9f225b5ba11c8d8c09075590490df16314e4d62
+
+COCOAPODS: 0.35.0

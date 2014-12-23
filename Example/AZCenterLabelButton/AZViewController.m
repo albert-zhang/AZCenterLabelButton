@@ -7,6 +7,7 @@
 //
 
 #import "AZViewController.h"
+#import <AZCenterLabelButton/AZCenterLabelButton.h>
 
 @interface AZViewController ()
 
@@ -18,6 +19,16 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+	
+	AZCenterLabelButton *btn = [[AZCenterLabelButton alloc] init];
+	[btn setImage:[UIImage imageNamed:@"btn"] forState:UIControlStateNormal];
+	[btn setTitle:@"Hello Meizai!" forState:UIControlStateNormal];
+	[btn setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+	[btn setTitleColor:[UIColor purpleColor] forState:UIControlStateHighlighted];
+	[btn sizeToFit];
+	[self.view addSubview:btn];
+	
+	btn.center = self.view.center;
 }
 
 - (void)didReceiveMemoryWarning
