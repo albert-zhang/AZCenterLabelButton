@@ -107,7 +107,7 @@
     CGSize sz = [super sizeThatFits:size];
 
 	CGSize sz1 = CGSizeZero;
-	BOOL r = [self goodSize:&sz1];
+	BOOL r = [self calcFitSize:&sz1];
 	if(r){
 		return sz1;
 	}
@@ -117,11 +117,11 @@
 
 - (CGSize)intrinsicContentSize{
 	CGSize sz = CGSizeZero;
-	[self goodSize:&sz];
+	[self calcFitSize:&sz];
 	return sz;
 }
 
-- (BOOL)goodSize:(CGSize *)sz{
+- (BOOL)calcFitSize:(CGSize *)sz{
 	CGRect titleRect;
 	CGSize imgSize;
 	BOOL b = [self calcImageAndTitleSize:&titleRect imageSize:&imgSize];
