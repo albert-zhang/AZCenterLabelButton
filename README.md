@@ -18,10 +18,6 @@ it, simply add the following line to your Podfile:
 
     pod "AZCenterLabelButton"
 
-## Author
-
-albert-zhang, edistein.zhang@gmail.com
-
 ## License
 
 AZCenterLabelButton is available under the MIT license. See the LICENSE file for more info.
