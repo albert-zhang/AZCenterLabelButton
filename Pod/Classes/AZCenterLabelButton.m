@@ -13,7 +13,8 @@
 - (void)setDefaluts{
     _imageLabelGap = 4;
     _padding = UIEdgeInsetsZero;
-    [self titleLabel]; // force create title label
+    hasTitleSet = NO;
+    hasImageSet = NO;
 }
 
 - (instancetype)init
@@ -35,7 +36,21 @@
 }
 
 
+- (void)setTitle:(NSString *)title forState:(UIControlState)state{
+    [super setTitle:title forState:state];
+    hasTitleSet = YES;
+}
+
+- (void)setImage:(UIImage *)image forState:(UIControlState)state{
+    [super setImage:image forState:state];
+    hasImageSet = YES;
+}
+
+
 - (BOOL)calcImageAndTitleSize:(CGRect *)titleRect imageSize:(CGSize *)imageSize{
+    if((! hasTitleSet) || (! hasImageSet)){
+        return NO;
+    }
     UIImage *img = [self imageForState:UIControlStateNormal];
     NSString *title = [self titleForState:UIControlStateNormal];
     if(img && title){
@@ -58,7 +73,7 @@
 
 
 - (CGRect)titleRectForContentRect:(CGRect)contentRect{
-    CGRect r = [super titleRectForContentRect:contentRect];
+    CGRect r = CGRectZero;
 
     CGRect titleRect;
     CGSize imgSize;
@@ -81,7 +96,7 @@
 }
 
 - (CGRect)imageRectForContentRect:(CGRect)contentRect{
-    CGRect r = [super imageRectForContentRect:contentRect];
+    CGRect r = CGRectZero;
 
     CGRect titleRect;
     CGSize imgSize;

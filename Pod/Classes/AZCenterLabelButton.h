@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface AZCenterLabelButton : UIButton
+{
+@private
+    BOOL hasImageSet;
+    BOOL hasTitleSet;
+}
 
 /**
  The vertical gap between the image and the label
